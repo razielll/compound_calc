@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -10,20 +9,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
       <header>
         <h1>Simple compound calculator</h1>
       </header>
@@ -47,6 +32,7 @@ function App() {
         </div>
         <div className="result">
         {parseInt(initialSum*(1+rate/100)**timePeriod).toLocaleString('en-us')}
+        {/* {(initialSum*(1+rate/100)**timePeriod).toLocaleString('en-us')} */}
           {/* result: {(initialSum*(1+rate/100)**timePeriod)} */}
           {/* {console.log(initialSum*(1+rate/100)**timePeriod)} */}
           {/* <div>rate: {rate}</div>
