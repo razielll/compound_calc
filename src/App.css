@@ -16,7 +16,6 @@ h5 {
 .main-section {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   align-items: center;
   padding: 0 12px;
 }
@@ -43,13 +42,13 @@ h5 {
 
 .rate-input label {
   min-width: 135px;
+  width: 50%;
 }
 
 .result {
-  margin-top: 42px;
-  font-size: 6rem;
+  margin-top: 32px;
+  font-size: 4.5rem;
   font-weight: bold;
-  margin-top: 124px;
   overflow-wrap: anywhere;
 }
 
