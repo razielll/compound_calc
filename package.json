@@ -1,6 +1,6 @@
 {
   "name": "compound_app",
-  "homepage": "https://simplecompoundcalc.com/",
+  "homepage": "https://simplecompoundcalc.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
