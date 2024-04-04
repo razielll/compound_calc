@@ -13,7 +13,7 @@ import Contact from './Pages/Contact';
 // import reportWebVitals from './reportWebVitals';
 
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
