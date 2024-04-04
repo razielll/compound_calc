@@ -3,7 +3,7 @@ import { useState } from 'react';
 import InputBlock from './components/InputBlock';
 import HowTo from './components/HowTo';
 import Footer from './components/Footer';
-
+import NavLinks from './components/NavLinks';
 
 function App() {
 
@@ -60,6 +60,8 @@ function App() {
       </div>
 
       <Footer />
+
+      <NavLinks />
     </div>
   );
 }

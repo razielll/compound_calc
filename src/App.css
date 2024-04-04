@@ -5,7 +5,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: calc(100vh - 48px);
 }
 
 .site-title {
@@ -96,6 +96,22 @@ footer {
   margin: 8px 0 6px;
 }
 
+.nav-links {
+  margin-top: auto;
+  padding: 0 24px;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links ul a {
+  color: white;
+}
+
 @media only screen and (max-width: 1024px) {
   .site-title {
     margin-bottom: 64px;
@@ -103,5 +119,12 @@ footer {
 
   .main-section {
     padding: 0 12px;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+  }
+  .nav-links ul a {
+    margin-bottom: 24px;
   }
 }

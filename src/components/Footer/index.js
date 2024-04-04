@@ -1,4 +1,5 @@
 function Footer() {
+
     return (
         <footer>
             <h4>Personal note:</h4>
