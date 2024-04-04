@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-import {createBrowserRouter, RouterProvider, createHashRouter } from "react-router-dom";
-
-
-import './index.css';
-import './App.css';
+import {createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from './App';
 import Policy from './Pages/Policy';
 import Contact from './Pages/Contact';
 // import reportWebVitals from './reportWebVitals';
 
+import './index.css';
+import './App.css';
 
 const router = createBrowserRouter([
   {
@@ -33,7 +30,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
-    {/* <App /> */}
   </React.StrictMode>
 );
 
