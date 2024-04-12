@@ -6,7 +6,9 @@ function Policy() {
         <div className="App">
             <h1>Privacy Policy</h1>
             <p>Last updated: April 04, 2024</p>
-            <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
+            <p>Read more <a href="https://policies.google.com/technologies/partner-sites" alt="google privacy policy">HOW GOOGLE USES INFORMATION FROM SITES OR APPS THAT USE OUR SERVICES
+            </a></p>
+            {/* <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
             <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.termsfeed.com/privacy-policy-generator/" target="_blank" rel="noreferrer">Privacy Policy Generator</a>.</p>
             <h2>Interpretation and Definitions</h2>
             <h3>Interpretation</h3>
@@ -176,7 +178,7 @@ function Policy() {
                 <li>
                     <p>By visiting this page on our website: <a href="https://simplecompoundcalc.com/contact" target="_blank" rel="noreferrer">https://simplecompoundcalc.com/contact</a></p>
                 </li>
-            </ul>
+            </ul> */}
 
             <NavLinks />
         </div >
