@@ -104,8 +104,13 @@ footer {
 .nav-links ul {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links ul li {
+  margin-bottom: 18px;
 }
 
 .nav-links ul a {
@@ -127,4 +132,8 @@ footer {
   .nav-links ul a {
     margin-bottom: 24px;
   }
+}
+
+.tLeftAligned {
+  text-align: left;;
 }

@@ -14,6 +14,15 @@ function NavLinks() {
                 <Link to="/contact">
                     <li>Contact</li>
                 </Link>
+                <Link to="/terms">
+                    <li>Terms of Service</li>
+                </Link>
+                <Link to="/feature">
+                    <li>Suggest feature</li>
+                </Link>
+                <Link to="/support">
+                    <li>Help & Support</li>
+                </Link>
             </ul>
         </div>
     );
