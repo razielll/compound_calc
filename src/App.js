@@ -10,8 +10,22 @@ function App() {
   const [rate, setRate] = useState(7);
   const [sum, setSum] = useState(1000);
   const [timePeriod, setTimePeriod] = useState(20);
+  const [showDetailedResult, setShowDetailedResult] = useState(false);
 
   const result = parseInt(sum * (1 + rate / 100) ** timePeriod).toLocaleString('en-us');
+
+  const showResult = () => setShowDetailedResult(!showDetailedResult);
+
+  const createDetailedElements = (n) => {
+    if (!n || n === 0) return;
+    let elements = [];
+    let _sum = Number(sum);
+    for (let i = 1; i <= n; i++) {
+      elements.push(<li key={i*rate}><span style={{ minWidth: 128  , display: 'inline-block' }}><b>Period #{i}</b></span> {parseInt(_sum)} ➡️ {parseInt(_sum + Number(_sum) * Number(rate) / 100)} </li>);
+      _sum = _sum + Number(_sum) * Number(rate) / 100;
+    }
+    return elements;
+  }
 
   return (
     <div className="App">
@@ -52,13 +66,23 @@ function App() {
 
         <div className="result">{result}</div>
 
-        <HowTo />
+        <p style={{ cursor: 'pointer' }} onClick={showResult}><u>Click to view detailed result</u></p>
 
+        <div className="detailed-results">
+          {
+            (showDetailedResult && timePeriod && timePeriod > 0) ? (
+              <ul>
+                {createDetailedElements(timePeriod).map(el => el)}
+              </ul>
+            )
+              : null
+          }
+        </div>
+
+        <HowTo />
       </main>
 
-
       <Footer />
-
       <NavLinks />
 
     </div>

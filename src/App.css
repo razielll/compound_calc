@@ -137,3 +137,9 @@ footer {
 .tLeftAligned {
   text-align: left;;
 }
+
+.detailed-results ul {
+  list-style: none;
+  text-align: left;
+  display: inline-block;
+}
