@@ -12,20 +12,35 @@ function App() {
   const [timePeriod, setTimePeriod] = useState(20);
   const [showDetailedResult, setShowDetailedResult] = useState(false);
 
-  const result = parseInt(sum * (1 + rate / 100) ** timePeriod).toLocaleString('en-us');
+  const formula = sum * (1 + rate / 100) ** timePeriod;
+
+  const parseAndLocalize = (num) => {
+    if (!num || isNaN(num)) return;
+    return parseInt(num).toLocaleString('en-us');
+  };
 
   const showResult = () => setShowDetailedResult(!showDetailedResult);
 
-  const createDetailedElements = (n) => {
-    if (!n || n === 0) return;
+  const createDetailedElements = (timePeriod) => {
+    if (!timePeriod || isNaN(timePeriod)) return;
+
     let elements = [];
     let _sum = Number(sum);
-    for (let i = 1; i <= n; i++) {
-      elements.push(<li key={i*rate}><span style={{ minWidth: 128  , display: 'inline-block' }}><b>Period #{i}</b></span> {parseInt(_sum)} ➡️ {parseInt(_sum + Number(_sum) * Number(rate) / 100)} </li>);
-      _sum = _sum + Number(_sum) * Number(rate) / 100;
+    let _rate = Number(rate);
+
+    for (let i = 1; i <= timePeriod; i++) {
+      elements.push(
+        <li key={i * rate} style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <span style={{ minWidth: 128, display: 'inline-block' }}><b>Period #{i}</b></span>
+          <span style={{ minWidth: 240, display: 'inline-block' }}>
+            {parseAndLocalize(_sum)} ➡️ {parseAndLocalize(_sum + (_sum * _rate / 100))}
+          </span>
+        </li>
+      );
+      _sum = _sum + (_sum * _rate / 100);
     }
     return elements;
-  }
+  };
 
   return (
     <div className="App">
@@ -37,7 +52,7 @@ function App() {
         <InputBlock
           labelFor="rate"
           labelTxt="Rate %"
-          inputMin="0.5"
+          inputMin="0.1"
           inputStep="0.5"
           initValue={rate}
           inputOnChange={setRate}
@@ -47,7 +62,7 @@ function App() {
         <InputBlock
           labelFor="sum"
           labelTxt="Base sum"
-          inputMin="100"
+          inputMin="1"
           inputStep="100"
           initValue={sum}
           inputOnChange={setSum}
@@ -57,14 +72,14 @@ function App() {
         <InputBlock
           labelFor="numcomp"
           labelTxt="Number of compounds"
-          inputMin="5"
+          inputMin="2"
           inputStep="1"
           initValue={timePeriod}
           inputOnChange={setTimePeriod}
           placeholderValue="# of Re-investments"
         />
 
-        <div className="result">{result}</div>
+        <div className="result">{parseAndLocalize(formula)}</div>
 
         <p style={{ cursor: 'pointer' }} onClick={showResult}><u>Click to view detailed result</u></p>
 
@@ -72,7 +87,7 @@ function App() {
           {
             (showDetailedResult && timePeriod && timePeriod > 0) ? (
               <ul>
-                {createDetailedElements(timePeriod).map(el => el)}
+                {createDetailedElements(timePeriod)}
               </ul>
             )
               : null
@@ -86,7 +101,6 @@ function App() {
       <NavLinks />
 
     </div>
-
   );
 }
 
